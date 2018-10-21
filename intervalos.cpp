@@ -8,6 +8,13 @@
 #include <climits>
 #include <time.h>
 
+struct intervalos_pos {
+    intervalo_t inter;
+    int pos; //Me dice la posicion dentro del array 'intervalos'
+};
+
+typedef intervalos_pos *intervalos_posicion;
+
 /* Devuelve un arreglo de booleanos de 'n' con TRUE en los intervalos asignados,
    los cuales no se superponen.
    La cantidad de intervalos asignados debe ser la máxima posible.
@@ -16,17 +23,18 @@
 */
 bool *max_cantidad(const intervalo_t *intervalos, uint n) {
     //Inicializo mi arreglo en true, luego voy quitando
-    bool *ab[n];
-    int i;
-    for (i = 0, i<n, i++) {
-        ab[i] = true;
+    bool *ab = new bool[n];
+    uint i;
+    for (i = 0; i<n; i++) {
+        ab[i] = false;
     }
-    //Ordeno mi arreglo en orden ascendente de finalizacion
+    /*Agrego el primer intervalo (el de menor valor de fin)*/
+    int min_f = minimo 
     
 
     /*Voy tomando los menores intervalos segun el tiempo de finalizacion
     y voy eliminando los que NO son compatibles*/
-    return ab[n];
+    return ab;
 }
 
 

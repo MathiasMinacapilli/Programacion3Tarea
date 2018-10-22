@@ -1,3 +1,4 @@
+/* 4976552 */
 
 #include "include/intervalos.h"
 
@@ -10,19 +11,41 @@
 
 /* ------------------------------------------------------------------- */
 /* Se crea el TAD 'Heap' en el cual siempre en la posicion h[1] tengo
-el minimo intervalo de finalizacion
+el minimo intervalo segun su finalizacion.
 El criterio de ordenacion es que el padre siempre es menor que sus hijos.*/
-
-heap_t crear_heap(const)
-
-
 
 struct intervalos_pos {
     intervalo_t inter;
     int pos; //Me dice la posicion dentro del array 'intervalos'
 };
 
-typedef intervalos_pos *heap_t;
+struct heap {
+    intervalos_pos *inter_pos;
+    uint last;
+};
+typedef heap *heap_t;
+
+heap_t crear_heap(const intervalo_t *intervalos, uint n) {
+    heap_t h = new heap;
+    h->inter_pos = new intervalos_pos[n+1]; //Se crea hasta n+1 pues el lugar 0 no se usa y se necesitan n espacios
+    h->last = 0; //Apunta al ultimo nodo con informacion (Si es 0 entonces el heap esta vacio)
+    return h;
+}
+
+bool es_vacio_heap(heap_t h) { return h->last == 0; }
+bool esta_lleno_heap(heap_t h) { return h->last == n+1;}
+
+heap_t insertar_en_heap(heap_t h, intervalo_t inter, uint pos) {
+    if(!esta_lleno_heap(h)) {
+        //Cargo datos
+        (h->last)++;
+        (h->inter_pos[h->last]).inter = inter;
+        (h->inter_pos[h->last]).pos = pos;
+        //Actualizo heap
+        
+    }
+}
+
 
 /* ------------------------------------------------------------------- */
 

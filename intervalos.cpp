@@ -21,7 +21,7 @@ struct intervalos_pos {
 
 struct heap {
     intervalos_pos *inter_pos;
-    uint last;
+    uint last, tamanio;
 };
 typedef heap *heap_t;
 
@@ -29,22 +29,37 @@ heap_t crear_heap(const intervalo_t *intervalos, uint n) {
     heap_t h = new heap;
     h->inter_pos = new intervalos_pos[n+1]; //Se crea hasta n+1 pues el lugar 0 no se usa y se necesitan n espacios
     h->last = 0; //Apunta al ultimo nodo con informacion (Si es 0 entonces el heap esta vacio)
+    h->tamanio = n;
     return h;
 }
 
 bool es_vacio_heap(heap_t h) { return h->last == 0; }
-bool esta_lleno_heap(heap_t h) { return h->last == n+1;}
+bool esta_lleno_heap(heap_t h) { return h->last == h->tamanio + 1; }
 
-heap_t insertar_en_heap(heap_t h, intervalo_t inter, uint pos) {
+void insertar_en_heap(heap_t h, intervalo_t inter, uint pos) {
     if(!esta_lleno_heap(h)) {
         //Cargo datos
         (h->last)++;
         (h->inter_pos[h->last]).inter = inter;
         (h->inter_pos[h->last]).pos = pos;
         //Actualizo heap
-        
+        int pos_actual = h->last;
+        int padre = pos_actual/2;
+        while(pos_actual>1 && ((h->inter_pos[padre]).inter.fin > h->inter_pos[pos_actual].inter.fin)) {
+            //Intercabmio el hijo con el padre
+            intervalos_pos aux = h->inter_pos[pos_actual];
+            h->inter_pos[pos_actual] = h->inter_pos[padre];
+            h->inter_pos[padre] = aux;
+
+            pos_actual = padre;
+            padre = pos_actual/2;
+        }
     }
 }
+
+/* intervalos_pos obtener_minimo(heap_t &h) {
+
+} */
 
 
 /* ------------------------------------------------------------------- */

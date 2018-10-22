@@ -8,12 +8,23 @@
 #include <climits>
 #include <time.h>
 
+/* ------------------------------------------------------------------- */
+/* Se crea el TAD 'Heap' en el cual siempre en la posicion h[1] tengo
+el minimo intervalo de finalizacion
+El criterio de ordenacion es que el padre siempre es menor que sus hijos.*/
+
+heap_t crear_heap(const)
+
+
+
 struct intervalos_pos {
     intervalo_t inter;
     int pos; //Me dice la posicion dentro del array 'intervalos'
 };
 
-typedef intervalos_pos *intervalos_posicion;
+typedef intervalos_pos *heap_t;
+
+/* ------------------------------------------------------------------- */
 
 /* Devuelve un arreglo de booleanos de 'n' con TRUE en los intervalos asignados,
    los cuales no se superponen.
@@ -28,8 +39,8 @@ bool *max_cantidad(const intervalo_t *intervalos, uint n) {
     for (i = 0; i<n; i++) {
         ab[i] = false;
     }
-    /*Agrego el primer intervalo (el de menor valor de fin)*/
-    int min_f = minimo 
+    /*Ordeno en un nuevo array 'int_pos' mis intervalos en orden ascendiente 
+    de finalizacion*/
     
 
     /*Voy tomando los menores intervalos segun el tiempo de finalizacion
@@ -49,6 +60,8 @@ bool *max_volumen(const intervalo_t *intervalos, uint n) {
     bool *ab[n];
     return ab[n];
 }
+
+/* ---------- FUNCIONES AUXILIARES ---------- */
 
 /*  Se considera que dos pedidos i, j ∈ {1, . . . , n} son compatibles 
     si y solo si no se superponen en el tiempo */

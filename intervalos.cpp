@@ -46,8 +46,8 @@ heap_t crear_heap(const intervalo_t *intervalos, uint n) {
     uint i;
     for(i=1; i<n+1; i++) {
         (h->last)++;
-        (h->inter_pos[h->last]).inter = intervalos[i];
-        (h->inter_pos[h->last]).pos = i;
+        (h->inter_pos[h->last]).inter = intervalos[i-1]; //i-1 pues intervalos si utiliza el lugar 0
+        (h->inter_pos[h->last]).pos = i-1;
         //Actualizo heap
         uint pos_actual = h->last;
         uint padre = pos_actual/2;
@@ -146,9 +146,9 @@ bool *max_cantidad(const intervalo_t *intervalos, uint n) {
     }
     /*Voy tomando los menores intervalos segun el tiempo de finalizacion
     y voy eliminando los que NO son compatibles*/
-    intervalos_pos ant_compatible = int_pos[1];
-    ab[int_pos[1].pos] = true;
-    for(i=0; i<n; i++) {
+    intervalos_pos ant_compatible = int_pos[0];
+    ab[int_pos[0].pos] = true;
+    for(i=1; i<n; i++) {
         if(son_compatibles(int_pos[i].inter,ant_compatible.inter)) {
             ab[int_pos[i].pos] = true;
             ant_compatible = int_pos[i];

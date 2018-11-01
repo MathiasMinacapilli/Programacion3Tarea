@@ -69,7 +69,7 @@ bool es_vacio_heap(heap_t h) { return h->last == 0; }
 
 bool esta_lleno_heap(heap_t h) { return h->last == h->tamanio + 1; }
 
-void insertar_en_heap(heap_t h, intervalo_t inter, uint pos) {
+/* void insertar_en_heap(heap_t h, intervalo_t inter, uint pos) {
     if(!esta_lleno_heap(h)) {
         //Cargo datos
         (h->last)++;
@@ -88,7 +88,7 @@ void insertar_en_heap(heap_t h, intervalo_t inter, uint pos) {
             padre = pos_actual/2;
         }
     }
-}
+} */
 
 intervalos_pos obtener_minimo(heap_t h) {
     intervalos_pos inter_min = h->inter_pos[1]; //El minimo elemento, para devolver

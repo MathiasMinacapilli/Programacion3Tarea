@@ -25,6 +25,8 @@ bool son_compatibles(intervalo_t i, intervalo_t j) {
 
 /* ------------------------------------------------ */
 
+
+/* ------------------------------------------------------------------- */
 /* ------------------------------------------------------------------- */
 /* Se crea el TAD 'Heap' en el cual siempre en la posicion h[1] tengo
 el minimo intervalo segun su finalizacion.
@@ -40,11 +42,31 @@ heap_t crear_heap(const intervalo_t *intervalos, uint n) {
     heap_t h = new heap;
     h->inter_pos = new intervalos_pos[n+1]; //Se crea hasta n+1 pues el lugar 0 no se usa y se necesitan n espacios
     h->last = 0; //Apunta al ultimo nodo con informacion (Si es 0 entonces el heap esta vacio)
+    //Cargo datos en el heap
+    uint i;
+    for(i=1; i<n+1; i++) {
+        (h->last)++;
+        (h->inter_pos[h->last]).inter = intervalos[i];
+        (h->inter_pos[h->last]).pos = i;
+        //Actualizo heap
+        uint pos_actual = h->last;
+        uint padre = pos_actual/2;
+        while(pos_actual>1 && ((h->inter_pos[padre]).inter.fin > h->inter_pos[pos_actual].inter.fin)) {
+            //Intercambio el hijo con el padre
+            intervalos_pos aux = h->inter_pos[pos_actual];
+            h->inter_pos[pos_actual] = h->inter_pos[padre];
+            h->inter_pos[padre] = aux;
+            //Actualizo posiciones
+            pos_actual = padre;
+            padre = pos_actual/2;
+        }
+    }
     h->tamanio = n;
     return h;
 }
 
 bool es_vacio_heap(heap_t h) { return h->last == 0; }
+
 bool esta_lleno_heap(heap_t h) { return h->last == h->tamanio + 1; }
 
 void insertar_en_heap(heap_t h, intervalo_t inter, uint pos) {
@@ -68,7 +90,7 @@ void insertar_en_heap(heap_t h, intervalo_t inter, uint pos) {
     }
 }
 
-intervalos_pos obtener_minimo(heap_t &h) {
+intervalos_pos obtener_minimo(heap_t h) {
     intervalos_pos inter_min = h->inter_pos[1]; //El minimo elemento, para devolver
     //Traigo el ultimo elemento a la primera posicion
     h->inter_pos[1] = h->inter_pos[h->last];
@@ -99,7 +121,7 @@ intervalos_pos obtener_minimo(heap_t &h) {
     return inter_min;
 }
 
-
+/* ------------------------------------------------------------------- */
 /* ------------------------------------------------------------------- */
 
 /* Devuelve un arreglo de booleanos de 'n' con TRUE en los intervalos asignados,

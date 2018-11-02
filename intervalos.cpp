@@ -169,6 +169,11 @@ bool *max_cantidad(const intervalo_t *intervalos, uint n) {
     El tiempo de ejecucion de peor caso debe ser O(n*log(n)).
 */
 bool *max_volumen(const intervalo_t *intervalos, uint n) {
+    /* OPT(j) = max { intervalos[j] + OPT(j-1) , OPT(j-1)}
+    Creo una tabla de tamanio n cuadrado, donde la fila i representa al intervalos[i] y
+    la columna j representa al intervalos[j].
+    Entonces recorro desde la diagonal hacia adelante, y voy haciendo OPT, para
+    ver si incluyo o no al elemento en el que estoy parado. */
     bool *ab[n];
     return ab[n];
 }

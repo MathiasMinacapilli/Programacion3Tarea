@@ -114,20 +114,25 @@ intervalos_pos obtener_minimo(heap_t h) {
     uint pos_actual = 1;
     uint hijo1 = pos_actual*2;
     uint hijo2 = (pos_actual*2) + 1;
-    while(pos_actual < h->last && ((h->inter_pos[hijo1].inter.fin < h->inter_pos[pos_actual].inter.fin)
-    || (h->inter_pos[hijo2].inter.fin < h->inter_pos[pos_actual].inter.fin))) {
-        if(h->inter_pos[hijo1].inter.fin < h->inter_pos[pos_actual].inter.fin) {
+    while(pos_actual < h->last && ((hijo1 <= h->last && h->inter_pos[hijo1].inter.fin < h->inter_pos[pos_actual].inter.fin)
+    || (hijo2 <= h->last && h->inter_pos[hijo2].inter.fin < h->inter_pos[pos_actual].inter.fin))) {
+        if(!(h->inter_pos[hijo2].inter.fin < h->inter_pos[hijo1].inter.fin) && 
+        h->inter_pos[hijo1].inter.fin < h->inter_pos[pos_actual].inter.fin) {
+            //Intercambio el hijo con el padre
             intervalos_pos aux = h->inter_pos[pos_actual];
             h->inter_pos[pos_actual] = h->inter_pos[hijo1];
             h->inter_pos[hijo1] = aux;
+            //Actualizo posiciones
             pos_actual = hijo1;
             hijo1 = pos_actual*2;
             hijo2 = (pos_actual*2) + 1;
         }
         else { //h->inter_pos[hijo2].inter.fin < h->inter_pos[pos_actual].inter.fin
+            //Intercambio el hijo con el padre
             intervalos_pos aux = h->inter_pos[pos_actual];
             h->inter_pos[pos_actual] = h->inter_pos[hijo2];
             h->inter_pos[hijo2] = aux;
+            //Actualizo posiciones
             pos_actual = hijo2;
             hijo1 = pos_actual*2;
             hijo2 = (pos_actual*2) + 1;

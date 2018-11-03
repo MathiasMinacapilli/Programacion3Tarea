@@ -1,3 +1,0 @@
-==1919== error calling PR_SET_PTRACER, vgdb might block
-1>Cantidad: 10
-2>Fin.

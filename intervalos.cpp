@@ -138,7 +138,7 @@ intervalos_pos obtener_minimo(heap_t h) {
 
 void liberar_heap(heap_t h) {
     delete[] h->inter_pos;
-    delete[] h;
+    delete[] h; 
 }
 
 /* ------------------------------------------------------------------- */

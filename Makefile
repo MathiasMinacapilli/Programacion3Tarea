@@ -101,7 +101,7 @@ clean_bin:
 
 # borra resultados de ejecución y comparación
 clean_test:
-	@rm -f $(TESTDIR)/*.sal $(TESTDIR)/*.diff $(TESTDIR)/*~
+	@rm -f $(TESTDIR)/*.sal $(TESTDIR)/*.diff 
 
 # borra binarios, resultados de ejecución y comparación, y copias de respaldo
 clean:clean_test clean_bin

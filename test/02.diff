@@ -2,98 +2,98 @@
 < 1>Volumen: 216
 < 2>Fin.
 ---
-> ==406== error calling PR_SET_PTRACER, vgdb might block
-> ==406== Invalid read of size 4
-> ==406==    at 0x109B34: obtener_minimo(heap*) (intervalos.cpp:117)
-> ==406==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406==  Address 0x5b83514 is 28 bytes before a block of size 432 in arena "client"
-> ==406== 
-> ==406== Invalid read of size 4
-> ==406==    at 0x109B90: obtener_minimo(heap*) (intervalos.cpp:119)
-> ==406==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406==  Address 0x5b83514 is 28 bytes before a block of size 432 in arena "client"
-> ==406== 
-> ==406== Invalid read of size 8
-> ==406==    at 0x109BF1: obtener_minimo(heap*) (intervalos.cpp:121)
-> ==406==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406==  Address 0x5b83510 is 32 bytes before a block of size 432 in arena "client"
-> ==406== 
-> ==406== Invalid read of size 8
-> ==406==    at 0x109BF4: obtener_minimo(heap*) (intervalos.cpp:121)
-> ==406==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406==  Address 0x5b83518 is 24 bytes before a block of size 432 alloc'd
-> ==406==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==406==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406== 
-> ==406== Invalid write of size 8
-> ==406==    at 0x109C19: obtener_minimo(heap*) (intervalos.cpp:122)
-> ==406==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406==  Address 0x5b83510 is 32 bytes before a block of size 432 in arena "client"
-> ==406== 
-> ==406== Invalid write of size 8
-> ==406==    at 0x109C1C: obtener_minimo(heap*) (intervalos.cpp:122)
-> ==406==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406==  Address 0x5b83518 is 24 bytes before a block of size 432 alloc'd
-> ==406==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==406==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406== 
-> ==406== Invalid read of size 4
-> ==406==    at 0x109B60: obtener_minimo(heap*) (intervalos.cpp:118)
-> ==406==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406==  Address 0x5b83524 is 12 bytes before a block of size 432 alloc'd
-> ==406==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==406==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406== 
-> ==406== Invalid read of size 8
-> ==406==    at 0x109C80: obtener_minimo(heap*) (intervalos.cpp:129)
-> ==406==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406==  Address 0x5b83520 is 16 bytes before a block of size 432 alloc'd
-> ==406==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==406==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406== 
-> ==406== Invalid read of size 8
-> ==406==    at 0x109C83: obtener_minimo(heap*) (intervalos.cpp:129)
-> ==406==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406==  Address 0x5b83528 is 8 bytes before a block of size 432 alloc'd
-> ==406==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==406==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406== 
-> ==406== Invalid write of size 8
-> ==406==    at 0x109CA8: obtener_minimo(heap*) (intervalos.cpp:130)
-> ==406==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406==  Address 0x5b83520 is 16 bytes before a block of size 432 alloc'd
-> ==406==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==406==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406== 
-> ==406== Invalid write of size 8
-> ==406==    at 0x109CAB: obtener_minimo(heap*) (intervalos.cpp:130)
-> ==406==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406==  Address 0x5b83528 is 8 bytes before a block of size 432 alloc'd
-> ==406==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==406==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406== 
-> ==406== Conditional jump or move depends on uninitialised value(s)
-> ==406==    at 0x109851: max(unsigned int, unsigned int) (intervalos.cpp:35)
-> ==406==    by 0x10A14B: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:216)
-> ==406==    by 0x109443: main (principal.cpp:201)
-> ==406== 
+> ==574== error calling PR_SET_PTRACER, vgdb might block
+> ==574== Invalid read of size 4
+> ==574==    at 0x109B34: obtener_minimo(heap*) (intervalos.cpp:117)
+> ==574==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574==  Address 0x5b83514 is 28 bytes before a block of size 432 in arena "client"
+> ==574== 
+> ==574== Invalid read of size 4
+> ==574==    at 0x109B90: obtener_minimo(heap*) (intervalos.cpp:119)
+> ==574==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574==  Address 0x5b83514 is 28 bytes before a block of size 432 in arena "client"
+> ==574== 
+> ==574== Invalid read of size 8
+> ==574==    at 0x109BF1: obtener_minimo(heap*) (intervalos.cpp:121)
+> ==574==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574==  Address 0x5b83510 is 32 bytes before a block of size 432 in arena "client"
+> ==574== 
+> ==574== Invalid read of size 8
+> ==574==    at 0x109BF4: obtener_minimo(heap*) (intervalos.cpp:121)
+> ==574==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574==  Address 0x5b83518 is 24 bytes before a block of size 432 alloc'd
+> ==574==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==574==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574== 
+> ==574== Invalid write of size 8
+> ==574==    at 0x109C19: obtener_minimo(heap*) (intervalos.cpp:122)
+> ==574==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574==  Address 0x5b83510 is 32 bytes before a block of size 432 in arena "client"
+> ==574== 
+> ==574== Invalid write of size 8
+> ==574==    at 0x109C1C: obtener_minimo(heap*) (intervalos.cpp:122)
+> ==574==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574==  Address 0x5b83518 is 24 bytes before a block of size 432 alloc'd
+> ==574==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==574==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574== 
+> ==574== Invalid read of size 4
+> ==574==    at 0x109B60: obtener_minimo(heap*) (intervalos.cpp:118)
+> ==574==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574==  Address 0x5b83524 is 12 bytes before a block of size 432 alloc'd
+> ==574==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==574==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574== 
+> ==574== Invalid read of size 8
+> ==574==    at 0x109C80: obtener_minimo(heap*) (intervalos.cpp:129)
+> ==574==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574==  Address 0x5b83520 is 16 bytes before a block of size 432 alloc'd
+> ==574==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==574==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574== 
+> ==574== Invalid read of size 8
+> ==574==    at 0x109C83: obtener_minimo(heap*) (intervalos.cpp:129)
+> ==574==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574==  Address 0x5b83528 is 8 bytes before a block of size 432 alloc'd
+> ==574==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==574==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574== 
+> ==574== Invalid write of size 8
+> ==574==    at 0x109CA8: obtener_minimo(heap*) (intervalos.cpp:130)
+> ==574==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574==  Address 0x5b83520 is 16 bytes before a block of size 432 alloc'd
+> ==574==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==574==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574== 
+> ==574== Invalid write of size 8
+> ==574==    at 0x109CAB: obtener_minimo(heap*) (intervalos.cpp:130)
+> ==574==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574==  Address 0x5b83528 is 8 bytes before a block of size 432 alloc'd
+> ==574==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==574==    by 0x109FA1: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:204)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574== 
+> ==574== Conditional jump or move depends on uninitialised value(s)
+> ==574==    at 0x109851: max(unsigned int, unsigned int) (intervalos.cpp:35)
+> ==574==    by 0x10A14B: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:216)
+> ==574==    by 0x109443: main (principal.cpp:201)
+> ==574== 
 > 1>
 \ No newline at end of file

@@ -1,118 +1,118 @@
 1c1,115
 < 1>Cantidad: 10
 ---
-> ==399== error calling PR_SET_PTRACER, vgdb might block
-> ==399== Invalid read of size 4
-> ==399==    at 0x109B34: obtener_minimo(heap*) (intervalos.cpp:117)
-> ==399==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399==  Address 0x5b834f4 is 4 bytes after a block of size 288 alloc'd
-> ==399==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==399==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
-> ==399==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399== 
-> ==399== Invalid read of size 4
-> ==399==    at 0x109B90: obtener_minimo(heap*) (intervalos.cpp:119)
-> ==399==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399==  Address 0x5b834f4 is 4 bytes after a block of size 288 alloc'd
-> ==399==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==399==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
-> ==399==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399== 
-> ==399== Invalid read of size 8
-> ==399==    at 0x109BF1: obtener_minimo(heap*) (intervalos.cpp:121)
-> ==399==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399==  Address 0x5b834f0 is 0 bytes after a block of size 288 alloc'd
-> ==399==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==399==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
-> ==399==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399== 
-> ==399== Invalid read of size 8
-> ==399==    at 0x109BF4: obtener_minimo(heap*) (intervalos.cpp:121)
-> ==399==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399==  Address 0x5b834f8 is 8 bytes after a block of size 288 alloc'd
-> ==399==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==399==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
-> ==399==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399== 
-> ==399== Invalid write of size 8
-> ==399==    at 0x109C19: obtener_minimo(heap*) (intervalos.cpp:122)
-> ==399==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399==  Address 0x5b834f0 is 0 bytes after a block of size 288 alloc'd
-> ==399==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==399==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
-> ==399==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399== 
-> ==399== Invalid write of size 8
-> ==399==    at 0x109C1C: obtener_minimo(heap*) (intervalos.cpp:122)
-> ==399==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399==  Address 0x5b834f8 is 8 bytes after a block of size 288 alloc'd
-> ==399==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==399==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
-> ==399==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399== 
-> ==399== Invalid read of size 4
-> ==399==    at 0x109B60: obtener_minimo(heap*) (intervalos.cpp:118)
-> ==399==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399==  Address 0x5b83504 is 20 bytes after a block of size 288 alloc'd
-> ==399==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==399==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
-> ==399==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399== 
-> ==399== Invalid read of size 8
-> ==399==    at 0x109C80: obtener_minimo(heap*) (intervalos.cpp:129)
-> ==399==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399==  Address 0x5b83500 is 16 bytes after a block of size 288 alloc'd
-> ==399==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==399==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
-> ==399==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399== 
-> ==399== Invalid read of size 8
-> ==399==    at 0x109C83: obtener_minimo(heap*) (intervalos.cpp:129)
-> ==399==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399==  Address 0x5b83508 is 24 bytes after a block of size 288 in arena "client"
-> ==399== 
-> ==399== Invalid write of size 8
-> ==399==    at 0x109CA8: obtener_minimo(heap*) (intervalos.cpp:130)
-> ==399==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399==  Address 0x5b83500 is 16 bytes after a block of size 288 alloc'd
-> ==399==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==399==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
-> ==399==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399== 
-> ==399== Invalid write of size 8
-> ==399==    at 0x109CAB: obtener_minimo(heap*) (intervalos.cpp:130)
-> ==399==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399==  Address 0x5b83508 is 24 bytes after a block of size 288 in arena "client"
-> ==399== 
-> ==399== Mismatched free() / delete / delete []
-> ==399==    at 0x4C3173B: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==399==    by 0x109D3D: liberar_heap(heap*) (intervalos.cpp:141)
-> ==399==    by 0x109F00: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:181)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399==  Address 0x5b83380 is 0 bytes inside a block of size 16 alloc'd
-> ==399==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==399==    by 0x109884: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:57)
-> ==399==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
-> ==399==    by 0x1092C8: main (principal.cpp:180)
-> ==399== 
+> ==567== error calling PR_SET_PTRACER, vgdb might block
+> ==567== Invalid read of size 4
+> ==567==    at 0x109B34: obtener_minimo(heap*) (intervalos.cpp:117)
+> ==567==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567==  Address 0x5b834f4 is 4 bytes after a block of size 288 alloc'd
+> ==567==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==567==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==567==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567== 
+> ==567== Invalid read of size 4
+> ==567==    at 0x109B90: obtener_minimo(heap*) (intervalos.cpp:119)
+> ==567==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567==  Address 0x5b834f4 is 4 bytes after a block of size 288 alloc'd
+> ==567==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==567==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==567==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567== 
+> ==567== Invalid read of size 8
+> ==567==    at 0x109BF1: obtener_minimo(heap*) (intervalos.cpp:121)
+> ==567==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567==  Address 0x5b834f0 is 0 bytes after a block of size 288 alloc'd
+> ==567==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==567==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==567==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567== 
+> ==567== Invalid read of size 8
+> ==567==    at 0x109BF4: obtener_minimo(heap*) (intervalos.cpp:121)
+> ==567==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567==  Address 0x5b834f8 is 8 bytes after a block of size 288 alloc'd
+> ==567==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==567==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==567==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567== 
+> ==567== Invalid write of size 8
+> ==567==    at 0x109C19: obtener_minimo(heap*) (intervalos.cpp:122)
+> ==567==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567==  Address 0x5b834f0 is 0 bytes after a block of size 288 alloc'd
+> ==567==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==567==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==567==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567== 
+> ==567== Invalid write of size 8
+> ==567==    at 0x109C1C: obtener_minimo(heap*) (intervalos.cpp:122)
+> ==567==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567==  Address 0x5b834f8 is 8 bytes after a block of size 288 alloc'd
+> ==567==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==567==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==567==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567== 
+> ==567== Invalid read of size 4
+> ==567==    at 0x109B60: obtener_minimo(heap*) (intervalos.cpp:118)
+> ==567==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567==  Address 0x5b83504 is 20 bytes after a block of size 288 alloc'd
+> ==567==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==567==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==567==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567== 
+> ==567== Invalid read of size 8
+> ==567==    at 0x109C80: obtener_minimo(heap*) (intervalos.cpp:129)
+> ==567==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567==  Address 0x5b83500 is 16 bytes after a block of size 288 alloc'd
+> ==567==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==567==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==567==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567== 
+> ==567== Invalid read of size 8
+> ==567==    at 0x109C83: obtener_minimo(heap*) (intervalos.cpp:129)
+> ==567==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567==  Address 0x5b83508 is 24 bytes after a block of size 288 in arena "client"
+> ==567== 
+> ==567== Invalid write of size 8
+> ==567==    at 0x109CA8: obtener_minimo(heap*) (intervalos.cpp:130)
+> ==567==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567==  Address 0x5b83500 is 16 bytes after a block of size 288 alloc'd
+> ==567==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==567==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==567==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567== 
+> ==567== Invalid write of size 8
+> ==567==    at 0x109CAB: obtener_minimo(heap*) (intervalos.cpp:130)
+> ==567==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567==  Address 0x5b83508 is 24 bytes after a block of size 288 in arena "client"
+> ==567== 
+> ==567== Mismatched free() / delete / delete []
+> ==567==    at 0x4C3173B: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==567==    by 0x109D3D: liberar_heap(heap*) (intervalos.cpp:141)
+> ==567==    by 0x109F00: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:181)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567==  Address 0x5b83380 is 0 bytes inside a block of size 16 alloc'd
+> ==567==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==567==    by 0x109884: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:57)
+> ==567==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==567==    by 0x1092C8: main (principal.cpp:180)
+> ==567== 
 > 1>ERROR: hay solapamiento. 

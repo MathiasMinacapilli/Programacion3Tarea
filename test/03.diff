@@ -1,0 +1,107 @@
+1,2c1,103
+< 1>Cantidad: 9
+< 2>Fin.
+---
+> ==413== error calling PR_SET_PTRACER, vgdb might block
+> ==413== Invalid read of size 4
+> ==413==    at 0x109B34: obtener_minimo(heap*) (intervalos.cpp:117)
+> ==413==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==413==    by 0x1092C8: main (principal.cpp:180)
+> ==413==  Address 0x5b83714 is 20 bytes after a block of size 496 alloc'd
+> ==413==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==413==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==413==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==413==    by 0x1092C8: main (principal.cpp:180)
+> ==413== 
+> ==413== Invalid read of size 4
+> ==413==    at 0x109B90: obtener_minimo(heap*) (intervalos.cpp:119)
+> ==413==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==413==    by 0x1092C8: main (principal.cpp:180)
+> ==413==  Address 0x5b83714 is 20 bytes after a block of size 496 alloc'd
+> ==413==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==413==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==413==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==413==    by 0x1092C8: main (principal.cpp:180)
+> ==413== 
+> ==413== Invalid read of size 8
+> ==413==    at 0x109BF1: obtener_minimo(heap*) (intervalos.cpp:121)
+> ==413==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==413==    by 0x1092C8: main (principal.cpp:180)
+> ==413==  Address 0x5b83710 is 16 bytes after a block of size 496 alloc'd
+> ==413==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==413==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==413==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==413==    by 0x1092C8: main (principal.cpp:180)
+> ==413== 
+> ==413== Invalid read of size 8
+> ==413==    at 0x109BF4: obtener_minimo(heap*) (intervalos.cpp:121)
+> ==413==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==413==    by 0x1092C8: main (principal.cpp:180)
+> ==413==  Address 0x5b83718 is 24 bytes after a block of size 496 in arena "client"
+> ==413== 
+> ==413== Invalid write of size 8
+> ==413==    at 0x109C19: obtener_minimo(heap*) (intervalos.cpp:122)
+> ==413==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==413==    by 0x1092C8: main (principal.cpp:180)
+> ==413==  Address 0x5b83710 is 16 bytes after a block of size 496 alloc'd
+> ==413==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==413==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+> ==413==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==413==    by 0x1092C8: main (principal.cpp:180)
+> ==413== 
+> ==413== Invalid write of size 8
+> ==413==    at 0x109C1C: obtener_minimo(heap*) (intervalos.cpp:122)
+> ==413==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==413==    by 0x1092C8: main (principal.cpp:180)
+> ==413==  Address 0x5b83718 is 24 bytes after a block of size 496 in arena "client"
+> ==413== 
+> 
+> valgrind: m_mallocfree.c:307 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
+> valgrind: Heap block lo/hi size mismatch: lo = 560, hi = 60129542145.
+> This is probably caused by your program erroneously writing past the
+> end of a heap block and corrupting heap metadata.  If you fix any
+> invalid writes reported by Memcheck, this assertion failure will
+> probably go away.  Please try that before reporting this as a bug.
+> 
+> 
+> host stacktrace:
+> ==413==    at 0x580441BA: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+> ==413==    by 0x580442D4: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+> ==413==    by 0x58044459: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+> ==413==    by 0x58052FC0: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+> ==413==    by 0x5803CECA: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+> ==413==    by 0x5803B5D3: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+> ==413==    by 0x5803FC9D: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+> ==413==    by 0x5803A8CB: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+> ==413==    by 0x58015434: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+> ==413==    by 0x1002D7730D: ???
+> ==413==    by 0x1002CA9F2F: ???
+> ==413==    by 0x1C0F: ???
+> ==413==    by 0x100200831F: ???
+> ==413==    by 0x1002CA9F17: ???
+> ==413==    by 0x1002CA9F2F: ???
+> ==413==    by 0x5946EB1F: ???
+> ==413==    by 0x600: ???
+> ==413==    by 0x12B82: ???
+> 
+> sched status:
+>   running_tid=1
+> 
+> Thread 1: status = VgTs_Runnable (lwpid 413)
+> ==413==    at 0x109B60: obtener_minimo(heap*) (intervalos.cpp:118)
+> ==413==    by 0x109DFB: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:165)
+> ==413==    by 0x1092C8: main (principal.cpp:180)
+> 
+> 
+> Note: see also the FAQ in the source distribution.
+> It contains workarounds to several common problems.
+> In particular, if Valgrind aborted or crashed after
+> identifying problems in your program, there's a good chance
+> that fixing those problems will prevent Valgrind aborting or
+> crashing, especially if it happened in m_mallocfree.c.
+> 
+> If that doesn't help, please report this bug to: www.valgrind.org
+> 
+> In the bug report, send all the above text, the valgrind
+> version, and what OS and version you are using.  Thanks.
+> 

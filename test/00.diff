@@ -1,0 +1,24 @@
+0a1,23
+> ==392== error calling PR_SET_PTRACER, vgdb might block
+> ==392== Mismatched free() / delete / delete []
+> ==392==    at 0x4C3173B: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==392==    by 0x109D3D: liberar_heap(heap*) (intervalos.cpp:141)
+> ==392==    by 0x109F00: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:181)
+> ==392==    by 0x1092C8: main (principal.cpp:180)
+> ==392==  Address 0x5b831f0 is 0 bytes inside a block of size 16 alloc'd
+> ==392==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==392==    by 0x109884: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:57)
+> ==392==    by 0x109DA1: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:162)
+> ==392==    by 0x1092C8: main (principal.cpp:180)
+> ==392== 
+> ==392== Mismatched free() / delete / delete []
+> ==392==    at 0x4C3173B: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==392==    by 0x109D3D: liberar_heap(heap*) (intervalos.cpp:141)
+> ==392==    by 0x10A279: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:230)
+> ==392==    by 0x109443: main (principal.cpp:201)
+> ==392==  Address 0x5b83bf0 is 0 bytes inside a block of size 16 alloc'd
+> ==392==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==392==    by 0x109884: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:57)
+> ==392==    by 0x109F71: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:203)
+> ==392==    by 0x109443: main (principal.cpp:201)
+> ==392== 

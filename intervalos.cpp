@@ -136,6 +136,11 @@ intervalos_pos obtener_minimo(heap_t h) {
     return inter_min;
 }
 
+void liberar_heap(heap_t h) {
+    delete[] h->inter_pos;
+    delete[] h;
+}
+
 /* ------------------------------------------------------------------- */
 /* ------------------------------------------------------------------- */
 
@@ -172,6 +177,8 @@ bool *max_cantidad(const intervalo_t *intervalos, uint n) {
             ab[int_pos[i].pos] = false;
         }
     }
+    delete[] int_pos;
+    liberar_heap(heap);
     return ab;
 }
 
@@ -208,6 +215,7 @@ bool *max_volumen(const intervalo_t *intervalos, uint n) {
                                             maxVol[maxVol[j].ant_compatible] , maxVol[j-1]  } */
         maxVol[i].volumen = max(intervalos[maxVol[i].intervalo.pos].volumen + maxVol[maxVol[i].ant_compatible].volumen, maxVol[i-1].volumen);                                        
     }
+    //Agrego los elementos a mi solucion
     i = n;
     while(i>0) {
         if(intervalos[maxVol[i].intervalo.pos].volumen + maxVol[maxVol[i].ant_compatible].volumen > maxVol[i-1].volumen) {//Agrego el intervalo i
@@ -218,6 +226,8 @@ bool *max_volumen(const intervalo_t *intervalos, uint n) {
             i--;
         }
     }
+    delete[] maxVol;
+    liberar_heap(heap);
     return ab;
 }
 

@@ -1,0 +1,103 @@
+==420== error calling PR_SET_PTRACER, vgdb might block
+==420== Invalid read of size 4
+==420==    at 0x109B34: obtener_minimo(heap*) (intervalos.cpp:117)
+==420==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+==420==    by 0x109443: main (principal.cpp:201)
+==420==  Address 0x5b83714 is 20 bytes after a block of size 496 alloc'd
+==420==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==420==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+==420==    by 0x109F71: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:203)
+==420==    by 0x109443: main (principal.cpp:201)
+==420== 
+==420== Invalid read of size 4
+==420==    at 0x109B90: obtener_minimo(heap*) (intervalos.cpp:119)
+==420==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+==420==    by 0x109443: main (principal.cpp:201)
+==420==  Address 0x5b83714 is 20 bytes after a block of size 496 alloc'd
+==420==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==420==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+==420==    by 0x109F71: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:203)
+==420==    by 0x109443: main (principal.cpp:201)
+==420== 
+==420== Invalid read of size 8
+==420==    at 0x109BF1: obtener_minimo(heap*) (intervalos.cpp:121)
+==420==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+==420==    by 0x109443: main (principal.cpp:201)
+==420==  Address 0x5b83710 is 16 bytes after a block of size 496 alloc'd
+==420==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==420==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+==420==    by 0x109F71: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:203)
+==420==    by 0x109443: main (principal.cpp:201)
+==420== 
+==420== Invalid read of size 8
+==420==    at 0x109BF4: obtener_minimo(heap*) (intervalos.cpp:121)
+==420==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+==420==    by 0x109443: main (principal.cpp:201)
+==420==  Address 0x5b83718 is 24 bytes after a block of size 496 in arena "client"
+==420== 
+==420== Invalid write of size 8
+==420==    at 0x109C19: obtener_minimo(heap*) (intervalos.cpp:122)
+==420==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+==420==    by 0x109443: main (principal.cpp:201)
+==420==  Address 0x5b83710 is 16 bytes after a block of size 496 alloc'd
+==420==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==420==    by 0x1098AB: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+==420==    by 0x109F71: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:203)
+==420==    by 0x109443: main (principal.cpp:201)
+==420== 
+==420== Invalid write of size 8
+==420==    at 0x109C1C: obtener_minimo(heap*) (intervalos.cpp:122)
+==420==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+==420==    by 0x109443: main (principal.cpp:201)
+==420==  Address 0x5b83718 is 24 bytes after a block of size 496 in arena "client"
+==420== 
+
+valgrind: m_mallocfree.c:307 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
+valgrind: Heap block lo/hi size mismatch: lo = 560, hi = 60129542159.
+This is probably caused by your program erroneously writing past the
+end of a heap block and corrupting heap metadata.  If you fix any
+invalid writes reported by Memcheck, this assertion failure will
+probably go away.  Please try that before reporting this as a bug.
+
+
+host stacktrace:
+==420==    at 0x580441BA: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==420==    by 0x580442D4: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==420==    by 0x58044459: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==420==    by 0x58052FC0: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==420==    by 0x5803CECA: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==420==    by 0x5803B5D3: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==420==    by 0x5803FC9D: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==420==    by 0x5803A8CB: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==420==    by 0x58015434: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==420==    by 0x1002D783DD: ???
+==420==    by 0x1002CA9F2F: ???
+==420==    by 0x1C0F: ???
+==420==    by 0x100200831F: ???
+==420==    by 0x1002CA9F17: ???
+==420==    by 0x1002CA9F2F: ???
+==420==    by 0x5946EB1F: ???
+==420==    by 0x600: ???
+==420==    by 0x12B5A: ???
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 420)
+==420==    at 0x109B60: obtener_minimo(heap*) (intervalos.cpp:118)
+==420==    by 0x109FF4: max_volumen(intervalo_t const*, unsigned int) (intervalos.cpp:207)
+==420==    by 0x109443: main (principal.cpp:201)
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+

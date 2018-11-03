@@ -45,7 +45,7 @@ uint max(uint a, uint b) {
 /* ------------------------------------------------------------------- */
 /* Se crea el TAD 'Heap' en el cual siempre en la posicion h[1] tengo
 el minimo intervalo segun su finalizacion.
-El criterio de ordenacion es que el padre siempre es menor que sus hijos.*/
+El criterio de ordenacion es que el .fin del padre siempre es menor que el de sus hijos.*/
 
 struct heap {
     intervalos_pos_t inter_pos;
@@ -137,7 +137,8 @@ intervalos_pos obtener_minimo(heap_t h) {
 }
 
 void liberar_heap(heap_t h) {
-    delete[] h->inter_pos;
+    if(h->inter_pos != NULL)
+        delete[] h->inter_pos;
     delete[] h; 
 }
 
@@ -177,8 +178,6 @@ bool *max_cantidad(const intervalo_t *intervalos, uint n) {
             ab[int_pos[i].pos] = false;
         }
     }
-    delete[] int_pos;
-    liberar_heap(heap);
     return ab;
 }
 

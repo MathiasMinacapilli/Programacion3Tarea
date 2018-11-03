@@ -183,6 +183,9 @@ bool *max_cantidad(const intervalo_t *intervalos, uint n) {
             ab[int_pos[i].pos] = false;
         }
     }
+    delete[] int_pos;
+    delete heap->inter_pos;
+    delete[] heap;
     return ab;
 }
 

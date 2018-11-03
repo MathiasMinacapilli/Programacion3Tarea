@@ -1,0 +1,23 @@
+==1589== error calling PR_SET_PTRACER, vgdb might block
+==1589== Mismatched free() / delete / delete []
+==1589==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1589==    by 0x109FD0: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:187)
+==1589==    by 0x109338: main (principal.cpp:180)
+==1589==  Address 0x5b83510 is 0 bytes inside a block of size 496 alloc'd
+==1589==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1589==    by 0x10991B: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:58)
+==1589==    by 0x109E69: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:168)
+==1589==    by 0x109338: main (principal.cpp:180)
+==1589== 
+==1589== Mismatched free() / delete / delete []
+==1589==    at 0x4C3173B: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1589==    by 0x109FE3: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:188)
+==1589==    by 0x109338: main (principal.cpp:180)
+==1589==  Address 0x5b834c0 is 0 bytes inside a block of size 16 alloc'd
+==1589==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1589==    by 0x1098F4: crear_heap(intervalo_t const*, unsigned int) (intervalos.cpp:57)
+==1589==    by 0x109E69: max_cantidad(intervalo_t const*, unsigned int) (intervalos.cpp:168)
+==1589==    by 0x109338: main (principal.cpp:180)
+==1589== 
+1>Cantidad: 9
+2>Fin.

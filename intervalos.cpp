@@ -144,7 +144,7 @@ intervalos_pos obtener_minimo(heap_t h) {
 void liberar_heap(heap_t h) {
     if(h->inter_pos != NULL)
         delete[] h->inter_pos;
-    delete[] h; 
+    delete h; 
 }
 
 /* ------------------------------------------------------------------- */
@@ -184,8 +184,7 @@ bool *max_cantidad(const intervalo_t *intervalos, uint n) {
         }
     }
     delete[] int_pos;
-    delete heap->inter_pos;
-    delete[] heap;
+    liberar_heap(heap);
     return ab;
 }
 

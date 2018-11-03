@@ -1,0 +1,3 @@
+==1829== error calling PR_SET_PTRACER, vgdb might block
+1>Volumen: 484
+2>Fin.

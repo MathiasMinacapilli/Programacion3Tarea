@@ -15,12 +15,27 @@ struct intervalos_pos {
 };
 typedef intervalos_pos *intervalos_pos_t;
 
+struct max_vol {
+    intervalos_pos intervalo;
+    uint ant_compatible,volumen;
+};
+typedef max_vol *max_vol_t;
+
+
 /* ------------- FUNCIONES AUXILIARES ------------- */
 
 /*  Se considera que dos pedidos i, j ∈ {1, . . . , n} son compatibles 
     si y solo si no se superponen en el tiempo */
 bool son_compatibles(intervalo_t i, intervalo_t j) {
     return i.fin <= j.inicio || i.inicio >= j.fin;
+}
+
+/* Retorna el maximo de los dos valores */
+uint max(uint a, uint b) {
+    if(a<=b)
+        return b;
+    else //a>b
+        return a;
 }
 
 /* ------------------------------------------------ */
@@ -131,7 +146,7 @@ intervalos_pos obtener_minimo(heap_t h) {
    El tiempo de ejecucion de peor caso debe ser O(n*log(n)).
 */
 bool *max_cantidad(const intervalo_t *intervalos, uint n) {
-    //Inicializo mi arreglo en true, luego voy quitando
+    //Inicializo mi arreglo en false, luego voy agregando
     bool *ab = new bool[n];
     uint i;
     for (i = 0; i<n; i++) {
@@ -169,13 +184,41 @@ bool *max_cantidad(const intervalo_t *intervalos, uint n) {
     El tiempo de ejecucion de peor caso debe ser O(n*log(n)).
 */
 bool *max_volumen(const intervalo_t *intervalos, uint n) {
-    /* OPT(j) = max { intervalos[j] + OPT(j-1) , OPT(j-1)}
-    Creo una tabla de tamanio n cuadrado, donde la fila i representa al intervalos[i] y
-    la columna j representa al intervalos[j].
-    Entonces recorro desde la diagonal hacia adelante, y voy haciendo OPT, para
-    ver si incluyo o no al elemento en el que estoy parado. */
-    bool *ab[n];
-    return ab[n];
+    //Inicializo mi arreglo en false, luego voy agregando
+    bool *ab = new bool[n];
+    uint i;
+    for (i = 0; i<n; i++) {
+        ab[i] = false;
+    }
+    /*Ordeno en un nuevo array 'maxVol' mis intervalos en orden ascendiente 
+    de finalizacion (Heap Sort ~ O(nlogn))
+    Luego, en cada posicion de este arreglo ordenado voy calculando el valor maximo*/
+    heap_t heap = crear_heap(intervalos,n);
+    max_vol_t maxVol = new max_vol[n+1];//Creo de n+1 pues el lugar 0 lo uso para setear el valor 0
+    maxVol[0].volumen = 0;
+    for(i=1; i<n+1; i++) {
+        maxVol[i].intervalo = obtener_minimo(heap);
+        maxVol[i].ant_compatible = 0;
+        uint j = i;
+        //Seteo el valor de 'ant_compatible'
+        while(j>0 && maxVol[j].intervalo.inter.fin>maxVol[i].intervalo.inter.inicio)
+            j--;
+        maxVol[i].ant_compatible = j;
+        /*Seteo el valor maxVol[j].volumen = max { intervalos[maxVol[j].intervalo.pos].volumen + 
+                                            maxVol[maxVol[j].ant_compatible] , maxVol[j-1]  } */
+        maxVol[i].volumen = max(intervalos[maxVol[i].intervalo.pos].volumen + maxVol[maxVol[i].ant_compatible].volumen, maxVol[i-1].volumen);                                        
+    }
+    i = n;
+    while(i>0) {
+        if(intervalos[maxVol[i].intervalo.pos].volumen + maxVol[maxVol[i].ant_compatible].volumen > maxVol[i-1].volumen) {//Agrego el intervalo i
+            ab[maxVol[i].intervalo.pos] = true;
+            i = maxVol[i].ant_compatible;
+        }
+        else { //NO agrego el intervalo i
+            i--;
+        }
+    }
+    return ab;
 }
 
 

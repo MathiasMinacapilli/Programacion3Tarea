@@ -180,17 +180,18 @@ bool *max_cantidad(const intervalo_t *intervalos, uint n) {
     }
     /*Ordeno en un nuevo array 'int_pos' mis intervalos en orden ascendiente 
     de finalizacion (Heap Sort ~ O(nlogn))*/
-    heap_t heap = crear_heap(intervalos,n);
-    intervalos_pos_t int_pos = new intervalos_pos[n];
-    for(i=0; i<n; i++) {
-        int_pos[i] = obtener_minimo(heap);
-    }
     /*Voy tomando los menores intervalos segun el tiempo de finalizacion
     y voy eliminando los que NO son compatibles*/
+    heap_t heap = crear_heap(intervalos,n);
+    intervalos_pos_t int_pos = new intervalos_pos[n];
+    //Paso base
+    int_pos[0] = obtener_minimo(heap);
     intervalos_pos ant_compatible = int_pos[0];
     ab[int_pos[0].pos] = true;
+    //Paso inductivo
     for(i=1; i<n; i++) {
-        if(son_compatibles(int_pos[i].inter,ant_compatible.inter)) {
+        int_pos[i] = obtener_minimo(heap);
+        if(son_compatibles(int_pos[i].inter,ant_compatible.inter)) { //Son compatibles
             ab[int_pos[i].pos] = true;
             ant_compatible = int_pos[i];
         }
@@ -242,7 +243,8 @@ bool *max_volumen(const intervalo_t *intervalos, uint n) {
             maxVol[i].ant_compatible = mayor_inter_compatible(j+1, i, maxVol, i); //Voy a buscar a la mitad luego a j
         /*Seteo el valor maxVol[j].volumen = max { intervalos[maxVol[j].intervalo.pos].volumen + 
                                             maxVol[maxVol[j].ant_compatible] , maxVol[j-1]  } */
-        maxVol[i].volumen = max(intervalos[maxVol[i].intervalo.pos].volumen + maxVol[maxVol[i].ant_compatible].volumen, maxVol[i-1].volumen);                                        
+        maxVol[i].volumen = max(intervalos[maxVol[i].intervalo.pos].volumen + maxVol[maxVol[i].ant_compatible].volumen, maxVol[i-1].volumen);
+        
     }
     //Agrego los elementos a mi solucion
     i = n;

@@ -38,6 +38,21 @@ uint max(uint a, uint b) {
         return a;
 }
 
+/*  Busca el mayor de los intervalos compatibles en O(n.logn) pues va siempre a la mitad del array 
+    Devuelve la posicion en el arreglo ''*/
+uint mayor_inter_compatible(uint desde, uint hasta, max_vol_t maxVol, uint i) {
+    uint j = ((hasta-desde)/2) + desde; //La mitad del intervalo
+    if(desde == hasta) //Estoy en una sola casilla del array
+        return desde; //Posicion en la cual esta mi mayor intervalo compatible
+    else if(maxVol[j].intervalo.inter.fin>maxVol[i].intervalo.inter.inicio) //No es compatible
+        return mayor_inter_compatible(desde, j-1, maxVol, i); //Voy a buscar a la mitad anterior a j
+    else if(maxVol[j].intervalo.inter.fin<=maxVol[i].intervalo.inter.inicio && !(maxVol[j+1].intervalo.inter.fin<=maxVol[i].intervalo.inter.inicio)) //j es el mayor intervalo compatible, pues estan ordenados segun su fin
+        return j;
+    else if(maxVol[j].intervalo.inter.fin<=maxVol[i].intervalo.inter.inicio && (maxVol[j+1].intervalo.inter.fin<=maxVol[i].intervalo.inter.inicio)) //j NO es el mayor intervalo, pues j+1 tambien cumple la condicion
+        return mayor_inter_compatible(j+1, hasta, maxVol, i); //Voy a buscar a la mitad luego a j
+    return j;
+}
+
 /* ------------------------------------------------ */
 
 
@@ -212,11 +227,19 @@ bool *max_volumen(const intervalo_t *intervalos, uint n) {
     for(i=1; i<n+1; i++) {
         maxVol[i].intervalo = obtener_minimo(heap);
         maxVol[i].ant_compatible = 0;
-        uint j = i;
+        uint j = i/2;
         //Seteo el valor de 'ant_compatible'
-        while(j>0 && maxVol[j].intervalo.inter.fin>maxVol[i].intervalo.inter.inicio)
-            j--;
-        maxVol[i].ant_compatible = j;
+        if(maxVol[1].intervalo.inter.fin>maxVol[i].intervalo.inter.inicio) { //No es compatible con niguno anterior
+            maxVol[i].ant_compatible = 0;
+        } 
+        else if(maxVol[j].intervalo.inter.fin>maxVol[i].intervalo.inter.inicio) { //No es compatible
+            maxVol[i].ant_compatible = mayor_inter_compatible(1, j-1, maxVol, i); //Voy a buscar a la mitad anterior a j
+        } 
+        else if(maxVol[j].intervalo.inter.fin<=maxVol[i].intervalo.inter.inicio && !(maxVol[j+1].intervalo.inter.fin<=maxVol[i].intervalo.inter.inicio)) { //j es el mayor intervalo compatible, pues estan ordenados segun su fin
+            maxVol[i].ant_compatible = j;
+        } 
+        else if(maxVol[j].intervalo.inter.fin<=maxVol[i].intervalo.inter.inicio && (maxVol[j+1].intervalo.inter.fin<=maxVol[i].intervalo.inter.inicio)) //j NO es el mayor intervalo, pues j+1 tambien cumple la condicion
+            maxVol[i].ant_compatible = mayor_inter_compatible(j+1, i, maxVol, i); //Voy a buscar a la mitad luego a j
         /*Seteo el valor maxVol[j].volumen = max { intervalos[maxVol[j].intervalo.pos].volumen + 
                                             maxVol[maxVol[j].ant_compatible] , maxVol[j-1]  } */
         maxVol[i].volumen = max(intervalos[maxVol[i].intervalo.pos].volumen + maxVol[maxVol[i].ant_compatible].volumen, maxVol[i-1].volumen);                                        

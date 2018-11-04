@@ -175,9 +175,6 @@ bool *max_cantidad(const intervalo_t *intervalos, uint n) {
     //Inicializo mi arreglo en false, luego voy agregando
     bool *ab = new bool[n];
     uint i;
-    for (i = 0; i<n; i++) {
-        ab[i] = false;
-    }
     /*Ordeno en un nuevo array 'int_pos' mis intervalos en orden ascendiente 
     de finalizacion (Heap Sort ~ O(nlogn))*/
     /*Voy tomando los menores intervalos segun el tiempo de finalizacion
@@ -216,9 +213,6 @@ bool *max_volumen(const intervalo_t *intervalos, uint n) {
     //Inicializo mi arreglo en false, luego voy agregando
     bool *ab = new bool[n];
     uint i;
-    for (i = 0; i<n; i++) {
-        ab[i] = false;
-    }
     /*Ordeno en un nuevo array 'maxVol' mis intervalos en orden ascendiente 
     de finalizacion (Heap Sort ~ O(nlogn))
     Luego, en cada posicion de este arreglo ordenado voy calculando el valor maximo*/
@@ -254,6 +248,7 @@ bool *max_volumen(const intervalo_t *intervalos, uint n) {
             i = maxVol[i].ant_compatible;
         }
         else { //NO agrego el intervalo i
+            ab[maxVol[i].intervalo.pos] = false;
             i--;
         }
     }

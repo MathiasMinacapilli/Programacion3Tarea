@@ -136,7 +136,7 @@ bool hay_solapamiento(bool *solucion, intervalo_t *intervalos, uint n) {
     }
   }
   bool solapa = false;
-  for (uint i = 0; ((i < cant_seleccionados - 1) && (!solapa)); i++)
+  for (uint i = 0; ((i < cant_seleccionados) && (!solapa)); i++)
     for (uint j = i + 1; ((j < cant_seleccionados) && (!solapa)); j++)
       if ((intervalos[seleccionados[i]].fin >
            intervalos[seleccionados[j]].inicio) &&

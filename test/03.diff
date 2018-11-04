@@ -1,0 +1,2 @@
+0a1
+> ==45== error calling PR_SET_PTRACER, vgdb might block
